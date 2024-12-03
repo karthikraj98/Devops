@@ -10,7 +10,7 @@ useful commands for docker operations
 
 4) docker inspect 
 
-5) docker pull nginx ---  To pull required package 
+5) docker pull nginx ---  To pull the required package 
 
 6) docker images --- To list the docker images 
 
@@ -18,33 +18,37 @@ useful commands for docker operations
 
 8) docker ps --- To list the active containers
 
-9) docker create ( Image I'd ) --- To create container
+9) docker create ( Image I'd ) --- To create a container
 
 10) docker start ( container I'd ) --- To start the container
 
-11) docker exec -it ( container I'd ) /bin/bash  --- To enter into container
+11) docker exec -it ( container I'd ) /bin/bash  --- To enter into the container
 
- note :- -it dedicates Interactive terminal 
+ Note:- -it dedicates the Interactive terminal 
 
-12) docker stop ( container I'd ) --- To stop container
+12) docker stop ( container I'd ) --- To stop the container
 
 13) docker create --name nginx_srv01 nginx --- To create container with specific name 
 
-14) docker run --name nginx_srv02 ngnix --- To create container, start and login directly into the container. It is called as Attached process
+14) docker run --name nginx_srv02 nginx --- To create a container, start and log directly into the container. 
+                                            It is called as the Attached process.
 
 15) docker run -d --name nginx_srv03 nginx --- To create, start the container and exit without logging into the container
 
-16) docker kill ( container I'd/Name ) --- To kill the container when it is non-responsive by forcefully and the data will be erased
+16) docker kill ( container I'd/Name ) --- To kill the container when it is non-responsive forcefully and the data will be erased
 
 17) docker rm ( container I'd/Name ) --- To remove the container 
 
 18) docker rmi ( image I'd ) --- To remove docker images 
 
 
-Docker Networking :- They are 3 types 
+Docker Networking:- There are 3 types 
 
-1) Bridge Networking :- The Bridge network creates a internal network with is a single docker host container placed within their network can                         communicate with each other but are isolated from containers not on he internal network.
+1) Bridge Networking:- The Bridge network creates an internal network with a single docker host container placed
+                        within their network can communicate with each other but are isolated from containers not on 
+                        the internal network.
 
-2) Host :- When using the host driver the container shares the network stack of the docker host appearing as if the contanier is the host itself            from a networking perspective
+2) Host:- When using the host driver the container shares the network stack of the docker host appearing as if the 
+           contanier is the host itself from a networking perspective
 
-3) None :- The none driver simply disables networking for a container making it isolated from other containers
+3) None:- The none driver disables networking for a container making it isolated from other containers
