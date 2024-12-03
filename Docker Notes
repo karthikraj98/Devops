@@ -1,0 +1,50 @@
+how to create a docker container
+
+useful commands for docker operations
+
+1) docker --version
+
+2) docker login
+
+3) docker search 
+
+4) docker inspect 
+
+5) docker pull nginx ---  To pull required package 
+
+6) docker images --- To list the docker images 
+
+7) docker ps -a --- To list the non-active containers
+
+8) docker ps --- To list the active containers
+
+9) docker create ( Image I'd ) --- To create container
+
+10) docker start ( container I'd ) --- To start the container
+
+11) docker exec -it ( container I'd ) /bin/bash  --- To enter into container
+
+ note :- -it dedicates Interactive terminal 
+
+12) docker stop ( container I'd ) --- To stop container
+
+13) docker create --name nginx_srv01 nginx --- To create container with specific name 
+
+14) docker run --name nginx_srv02 ngnix --- To create container, start and login directly into the container. It is called as Attached process
+
+15) docker run -d --name nginx_srv03 nginx --- To create, start the container and exit without logging into the container
+
+16) docker kill ( container I'd/Name ) --- To kill the container when it is non-responsive by forcefully and the data will be erased
+
+17) docker rm ( container I'd/Name ) --- To remove the container 
+
+18) docker rmi ( image I'd ) --- To remove docker images 
+
+
+Docker Networking :- They are 3 types 
+
+1) Bridge Networking :- The Bridge network creates a internal network with is a single docker host container placed within their network can                         communicate with each other but are isolated from containers not on he internal network.
+
+2) Host :- When using the host driver the container shares the network stack of the docker host appearing as if the contanier is the host itself            from a networking perspective
+
+3) None :- The none driver simply disables networking for a container making it isolated from other containers
