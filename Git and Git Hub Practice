@@ -1,0 +1,63 @@
+Git:
+Git is a version control system that helps developers track and manage changes to their codebase.
+It allows multiple developers to work on the same project without overwriting each other’s work, keeps 
+a history of all changes, and enables collaboration.
+
+
+GitHub:
+GitHub is a web-based platform that hosts Git repositories. It provides a cloud-based environment 
+for developers to store and share their Git repositories. It is built around Git, but it adds additional 
+features, making collaboration easier, especially for open-source projects. GitHub helps developers.
+
+
+how to create a local Repo :- 
+
+1)open visual code and locate the path where you want to place your scripting
+
+2) after choosing the path create a script file with a " .sh " extension which 
+indicates it is a script file 
+
+3) start the script with #!/bin/bash --- it is called a shebang (or hashbang) and 
+is typically found at the beginning of a script file, especially in Bash scripts.
+
+4) write the script and save it
+
+example : 
+#!/bin/bash 
+echo "hello world" 
+
+5) After that open git bash and use following commands 
+
+ ---> cd <choose the folder where the script file located>
+
+ ----> git init .    ---> it it create a empty local repo
+
+----> git status   ----> to check whether files are in staged state or unstaged state
+
+-----> git add <file name>   ---> to add the file to the staged state
+
+-----> git commit -m "changed made in the script" <file name>    ---> to notify the changes made in the script
+
+----> chmod +x <file name>  ---> provide the execute permissions to the file
+
+----- > git push origin main   ---> to push the file to the central repo
+
+----> First time it will ask permission to access github, for that create a token in github and paste the token  
+
+Note :- Providing user name and password is not recommened in real life scenario so instead using token  
+
+6) now connect to the ec2 instance and clone the script to the server.
+
+----> ssh ec2-user@<server ip>
+
+----> sudo su - 
+
+-----> git pull <github url>
+
+------> ls 
+
+------> chmod +x <file name>  ---> provide the execute permissions to the file
+
+----> ./<file name> or bash <file name>
+
+output :- hello world
