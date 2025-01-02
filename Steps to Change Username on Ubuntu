@@ -1,0 +1,104 @@
+Steps to Change Username on Ubuntu:
+
+1. Log in as a Different User
+
+You cannot change the username while logged in as that user. Log in as a different user with sudo privileges 
+(e.g., root or another administrative user). If you only have one user, you may need to use a Live USB or boot 
+into single-user mode to make these changes.
+
+2. Open a Terminal
+
+Press Ctrl + Alt + T to open the terminal.
+
+3. Check the Current Username
+
+First, verify the current username by running:
+
+bash
+
+Copy code
+
+whoami
+
+4. Rename the Username
+
+Use the usermod command to rename the user. Replace newusername with the new username and oldusername with the current username:
+
+bash
+
+Copy code
+
+sudo usermod -l newusername oldusername
+
+This command changes the login name (username).
+
+5. Rename the User’s Home Directory
+
+The user’s home directory is usually named after the old username. You'll want to rename it as well:
+
+bash
+
+Copy code
+
+sudo mv /home/oldusername /home/newusername
+
+6. Update the User Group Name (if needed)
+
+In many cases, the user’s primary group will have the same name as the username. You can rename the group with:
+
+bash
+
+Copy code
+
+sudo groupmod -n newusername oldusername
+
+7. Update File Ownership
+
+After renaming the username and group, you should update the ownership of files in the user’s home directory. 
+This ensures that the new username has full control over its files:
+
+bash
+
+Copy code
+
+sudo chown -R newusername:newusername /home/newusername
+
+8. Edit Configuration Files (if needed)
+
+Some system files may reference the old username. You will need to manually update those. Common files that may 
+need editing include:
+
+/etc/sudoers (use sudo visudo to edit)
+
+Any cron jobs or scripts that refer to the old username.
+
+You can edit files like /etc/sudoers using:
+
+bash
+
+Copy code
+
+sudo visudo
+
+9. Reboot the System
+
+After completing all the steps, reboot the system to ensure all changes are applied correctly:
+
+bash
+
+Copy code
+
+sudo reboot
+
+Important Notes:
+
+Backup Your Data: Before making any changes to user accounts, it's always a good idea to back up important files to avoid 
+data loss in case of errors.
+
+System Services: Some system services or applications might still reference the old username, so ensure that everything is 
+updated, including directories and files in /etc.
+
+Check Permissions: After making these changes, double-check that all files, directories, and configurations are still properly 
+accessible.
+
+By following these steps, you should be able to successfully change the username in Ubuntu.
