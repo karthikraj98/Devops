@@ -1,48 +1,51 @@
-what is Forward proxy and reverse proxy
+What is Forward proxy and reverse proxy?
 
-Forward Proxy: Sits between the client and the internet, used to control or filter outgoing traffic from the client to the server.
+Forward Proxy: Sits between the client and the internet, used to control or filter outgoing traffic
+from the client to the server.
 
 Advantages of Forward proxy: 
 1. You can watch restricted content
-2. You can change Geo location
-3. client side proxy, only client is aware of proxy
+2. You can change Geolocation
+3. client-side proxy, only the client is aware of the proxy
 4. Hiding client identity
-5. Traffic monitor
+5. Traffic Monitor
 6. Secure connections
 7. Content access restriction
-8. We can use it for cache purpose
+8. We can use it for cache purposes
 
-Reverse Proxy: Sits between the internet (clients) and the server, used to distribute incoming traffic, improve security, and balance the load on backend servers.
+Reverse Proxy: Sits between the internet (clients) and the server, used to distribute incoming traffic, 
+improve security, and balance the load on backend servers.
 
 Advantages of Reverse proxy:
-1. Only Server is aware of proxy
+1. Only the Server is aware of the proxy
 2. Security between clients and servers
-3. as load balancer..
+3. as load balancer.
 4. SSL termination
 
 /etc/nginx/nginx.conf --> default configuration file
-/usr/share/nginx/html ---> This is path where we place our HMTL code
+/usr/share/nginx/html ---> This is the path where we place our HTML code
 /var/log/nginx ---> To check the logs 
 
-include /etc/nginx/default.d/*.conf  ---> This is path we used to create a configuration without distrubing the default Nginx configuration file.
+Include /etc/nginx/default.d/*.conf  ---> This is the path we used to create a configuration without disturbing
+the default Nginx configuration file.
 
-Load Balancer Pratice 
+Load Balancer Practice 
 
-create a 3 servers and install nginx in respective server
+Create 3 servers and install nginx in the respective server.
 
-Nginx commands :-
+Nginx commands:-
 1) dnf install nginx -y
 2) Systemctl status nginx.service
 3) Systemctl enable nginx.service
 4) Systemctl start nginx.service
 5) cd /usr/share/nginx/html
-6) rm -rf *          ----> remove existing html code in both backend servers 
+6) rm -rf *          ----> remove existing HTML code in both backend servers 
 7) vim indem.html    ---> in both backend servers
-8) Hi,Welcome to server 1/2   ------> write your code in both backend servers 
-9) Systemctl restart nginx.service     -----> Always restart the service when you change something the code
-10) now check whether i website is working or not
+8) Hi, Welcome to server 1/2   ------> Write your code in both backend servers 
+9) Systemctl restart nginx.service     -----> Always restart the service when you change something in the code
+10) now check whether the website is working or not
 
-now come to the frontend server: 
+Now come to the frontend server: 
 
 Open use following configuration changes
 1) cd /etc/nginx/nginx.conf
@@ -55,7 +58,7 @@ http {
 
 2) cd /etc/nginx/defaults.d/
 
-3) vim load-balancer.conf    ----> paste below code here   
+3) vim loadbalancer.conf    ----> paste the below code here   
  " proxy_http_version 1.1;
 location / { proxy_pass http://upstream/; }
 location /health {
@@ -65,4 +68,5 @@ location /health {
 
 4) systemctl restart nginx.service 
 
-5) Now copy the frontend server IP and paste in browser, constantly click on refresh. We can notice that nginx server maintaining the load balance on both servers properly.
+5) Now copy the frontend server IP and paste it into the browser, constantly clicking on refresh. We can notice that the 
+nginx server is properly maintaining the load balance on both servers.
