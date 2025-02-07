@@ -51,20 +51,20 @@ Open use following configuration changes
 1) cd /etc/nginx/nginx.conf
 there look for http  and paste the below code under the http
 http {
- " upstream backend {
+  upstream backend {
       server 172.31.44.133; 
       server 172.31.38.145;
-   } " 
+   } 
 
 2) cd /etc/nginx/defaults.d/
 
 3) vim loadbalancer.conf    ----> paste the below code here   
- " proxy_http_version 1.1;
-location / { proxy_pass http://upstream/; }
+ proxy_http_version 1.1;
+location / { proxy_pass http://backend/; }
 location /health {
   stub_status on;
   access_log off;
-} " 
+} 
 
 4) systemctl restart nginx.service 
 
