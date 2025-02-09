@@ -52,3 +52,22 @@ Docker Networking:- There are 3 types
            contanier is the host itself from a networking perspective
 
 3) None:- The none driver disables networking for a container making it isolated from other containers
+
+
+How to create a docker file and its structure 
+
+Creating a Dockerfile is the first step to building a Docker image that contains your application and all the dependencies it needs to run. A Dockerfile is a text file that contains a series of commands to automate the building of a Docker image.
+
+Here's a general guide on how to create a basic Dockerfile and an example for different use cases:
+
+General Structure of a Dockerfile:
+A Dockerfile contains several instructions that define how the image should be built. The most common instructions are:
+
+FROM: Specifies the base image to use for your container.
+LABEL: Adds metadata to the image, like version or description.
+WORKDIR: Sets the working directory inside the container.
+COPY: Copies files or directories from the host system to the container.
+RUN: Runs commands in the container (e.g., installing packages).
+EXPOSE: Exposes a port to allow communication to/from the container.
+CMD: Defines the command to run when the container starts.
+ENTRYPOINT: Sets the executable that runs when the container starts (similar to CMD but more rigid).
