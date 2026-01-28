@@ -182,13 +182,15 @@ Here’s a possible way to structure your learning:
 2. **Day 3-4**: Learn about **S3 security** (permissions, ACLs, IAM roles) and **versioning**.
 3. **Day 5-7**: Dive into **storage classes**, **lifecycle policies**, and **encryption**.
 4. **Week 2**: Explore **event notifications**, **cost optimization**, and **advanced features** like **cross-region replication**.
-5. **Week 3 and beyond**: Focus on **real-world applications**, working with **AWS SDKs**, **automation**, and integrations with other AWS services.
+5. **Week 3 and beyond**: Focus on **real-world applications**, working with **AWS SDKs**, **automation**, and integrations with 
+   other AWS services.
 
 ### **Learning Resources**
 - **AWS Documentation**: AWS offers extensive [S3 documentation](https://docs.aws.amazon.com/s3/index.html) with guides and tutorials.
 - **AWS Free Tier**: Practice with the **AWS Free Tier** (includes 5GB of S3 storage for free) to experiment.
-- **YouTube / Online Courses**: Platforms like **Udemy**, **Coursera**, and **A Cloud Guru** offer beginner to advanced courses on AWS S3 and cloud storage.
+- **YouTube / Online Courses**: Platforms like **Udemy**, **Coursera**, and **A Cloud Guru** offer beginner to advanced courses on 
+  AWS S3 and cloud storage.
 - **Hands-on Labs**: Engage in hands-on exercises to get a real feel for using S3 in projects.
 
-By following this path, you can go from a beginner to an intermediate user of S3 within **a week or two**, and deeper mastery will come with continued 
-practice and integration of S3 into larger cloud solutions.
+By following this path, you can go from a beginner to an intermediate user of S3 within **a week or two**, and deeper mastery will 
+come with continued practice and integration of S3 into larger cloud solutions.
